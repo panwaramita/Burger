@@ -11,7 +11,11 @@ router.get("/",function(req,res)
     {
     return burger.selectAll("burger").then(function(data)
     {
-        console.log(data)
+        //console.log(data);
+        var hbsObject = {
+            burger: data
+          };
+        res.render("index",hbsObject);
     });
 }
     catch

@@ -1,0 +1,44 @@
+body
+{
+    background-color: pink;;
+}
+/*style for burger pic*/
+.burgerPic
+{
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+/*burger title css*/
+#title
+{
+    color: crimson;
+    text-align: center;
+}
+#burgername
+{
+    height: 60px;
+    width: 280px;
+}
+
+#devour
+{
+    display: none;
+}
+#notdevour
+{
+    display: none;
+}
+.wait
+{
+    background-color: wheat;
+    height: 30px;
+    margin-bottom: 5px;
+    float: left;
+    width: 230px;
+    margin-right: 3px;
+}
+.list
+{
+    list-style-type: none;
+}

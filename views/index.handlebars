@@ -1,0 +1,72 @@
+
+<div class="container">
+   <marquee><img src="/assets/img/burger1.jpg" class="burgerPic"><img src="/assets/img/burger2.jpg" class="burgerPic"><img src="/assets/img/burger3.jpg" class="burgerPic"></marquee> 
+    <h1 id="title">EAT-DA-Burger!</h1>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4"><ol>
+            {{#each burger}}
+            {{#if devoured}}
+            <div class='row'>
+                <div class='col-lg-12'>
+                    <li class='list'>
+                        <p class='wait'>{{this.id}}. {{this.burger_name}}</p>
+                        <button id='check' name="{{this.id}}">Devour it!</button>
+                        </li>
+                        </div>
+                        </div>
+            {{/if}}
+            {{/each}}
+        </ol>
+        </div>
+        <div class="col-lg-4">        
+<form id="burger" style="text-align: center;">
+    <textarea id="burgername" name="burgername">
+
+    </textarea><br>
+    <button type="submit"class="btn btn-primary">submit</button>
+</form>
+    </div>
+<div class="col-lg-4"><ol>
+     {{#each burger}}
+            {{#unless devoured}}
+            <div class='row'>
+                <div class='col-lg-12'>
+                    <li class='list'>
+                        <p class='wait'>{{this.id}}. {{this.burger_name}}</p>
+                        </li>
+                        </div>
+                        </div>
+            {{/unless}}
+            {{/each}}
+</ol></div>
+</div>
+</div>
+{{!-- <script type="text/javascript">
+    $(document).ready(function(){
+        var count=0;
+        var add=0;
+        $("#burger").on("submit",function(event){
+            event.preventDefault();
+            count++;
+           const li="<div class='row'><div class='col-lg-12'><li class='list'><p class='wait'>"+count+" . "+ $("#burgername").val()+"</p><button id='check' name="+$("#burgername").val()+">Devour it!</button></li></div></div>";
+           $("#devour").css("display","block");
+           $("#devour").append(li);
+           $("#burgername").val('')
+           
+           //location.reload();
+        });
+        $("#devour").on("click",function(event){
+            if(event.target.id=="check")
+            {   console.log(event.target.attributes[1].nodeValue);
+             event.target.parentElement.remove();
+                add++;
+           const li="<div class='row'><div class='col-lg-12'><li class='list'><p class='wait'>"+count+" . "+ event.target.attributes[1].nodeValue+"</p></li></div></div>";
+           $("#notdevour").css("display","block");
+           $("#notdevour").append(li);
+            }
+
+        })
+    });
+</script> --}}
