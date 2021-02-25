@@ -38,6 +38,16 @@ body
     width: 230px;
     margin-right: 3px;
 }
+.nowait
+{
+    background-color: white;
+    color: grey;
+    height: 25px;
+    margin-bottom: 1px;
+    float: left;
+    width: 230px;
+    margin-right: 3px;
+}
 .list
 {
     list-style-type: none;
