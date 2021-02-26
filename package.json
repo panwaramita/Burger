@@ -1,21 +1,19 @@
 {
   "name": "Burger",
   "version": "1.0.0",
+  "engines": {
+    "node":"14.5.4"
+  },
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/panwaramita/Burger.git"
-  },
+
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/panwaramita/Burger/issues"
-  },
   "homepage": "https://github.com/panwaramita/Burger#readme",
   "dependencies": {
     "express": "^4.17.1",
