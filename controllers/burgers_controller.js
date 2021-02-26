@@ -1,9 +1,6 @@
 const express=require('express');
 const burger=require('../models/burger');
 const router=express.Router();
-const PORT=process.env.PORT || 8080;
-const app=express();
-app.listen(PORT);
 //select all the values from the burger table
 router.get("/",function(req,res)
 {
