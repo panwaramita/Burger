@@ -1,29 +1,45 @@
-const express = require("express");
-const path=require('path');
-const PORT = process.env.PORT || 3000;
-
+const express = require('express');
+const expressHandlebars = require('express-handlebars');
 const app = express();
+const port = process.env.PORT || 3000
 
-// Serve static content for the app from the "public" directory in the application directory.
-//app.use(express.static("public"));
-app.use(express.static(path.join(__dirname,"public")));
-// Parse application body
+
+/**
+ * M I D D L E W E A R
+ */
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static(__dirname + '/public'));
 
-// Set Handlebars.
-const exphbs = require("express-handlebars");
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+/**
+ * H A N D L E B A R S   I N T E G R A T I O N 
+ */
 
-// Import routes and give the server access to them.
-const routes = require("./controllers/burgers_controller.js");
+app.engine('handlebars', expressHandlebars({
 
+    defaultLayout: 'main'
+
+}));
+app.set('view engine', 'handlebars');
+
+
+/**
+ * R O U T E    I N T E G R A T I O N 
+ */
+
+const routes = require('./controllers/burgers_controller');
 app.use(routes);
 
-// Start our server so that it can begin listening to client requests.
-app.listen(PORT, function() {
-  // Log (server-side) when our server has started
-  console.log("Server listening on: http://localhost:" + PORT);
-});
+
+/**
+ * L A U N C H    T H E    S E R V E R 
+ */
+
+app.listen(port, () => console.log(
+
+    `Express started on http://localhost:${port}; ` +
+    `press Crtl-C to terminate.`
+
+));
