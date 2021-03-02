@@ -8,5 +8,6 @@ create table burger(
     id int not null auto_increment,
     burger_name varchar(50) not null,
     devoured boolean not null,
+    createAt timestamp default CURRENT_TIMESTAMP not null,
     primary key(id)
 );

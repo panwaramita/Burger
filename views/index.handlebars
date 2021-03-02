@@ -1,10 +1,11 @@
-
+<!--div to hold the images for the burger-->
 <div class="container">
    <marquee><img src="/assets/img/burger1.jpg" class="burgerPic"><img src="/assets/img/burger3.jpg" class="burgerPic"><img src="/assets/img/burger4.png" class="burgerPic"></marquee> 
     <h1 id="title">EAT-DA-Burger!</h1>
 </div>
 <div class="container">
     <div class="row">
+        <!--div to hold the burger need to devour-->
         <div class="col-lg-4"><ol>
             {{#each burger}}
             {{#if devoured}}
@@ -20,10 +21,10 @@
             {{/each}}
         </ol>
         </div>
-        <div class="col-lg-4">        
+        <div class="col-lg-4"> 
+       <!--create the form that accept the new burger and on submit make an entry in the database-->            
 <form id="burger" style="text-align: center;">
     <textarea id="burgername" name="burgername">
-
     </textarea><br>
     <button type="submit"class="btn btn-primary" id="getData">submit</button>
 </form>
@@ -33,6 +34,7 @@
 </div>
 </div>
     </div>
+    <!--div for the burger that are devoured-->
 <div class="col-lg-4"><ol>
      {{#each burger}}
             {{#unless devoured}}
